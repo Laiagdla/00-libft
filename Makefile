@@ -24,7 +24,8 @@ clean:
 
 fclean: clean
 	rm -f *~ \#*
+	rm -f *.o
 
-re: all clean fclean
+re: clean fclean all
 
 .PHONY: all clean fclean re
