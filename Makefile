@@ -11,12 +11,12 @@ OBJS= $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -o $@ $^ -L. $(NAME).c
+	$(CC) $(CFLAGS) -o $@ $^ -L. -lft $(NAME).c
 
 $(ARCHIVE): $(OBJS)
 	$(AR) $@ $^
 
-%.o : %.c $(HDRS)
+$(OBJS) : $(SRCS) $(HDRS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
