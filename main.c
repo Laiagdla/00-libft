@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgrobe-d <lgrobe-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/07 12:44:18 by lgrobe-d          #+#    #+#             */
-/*   Updated: 2025/05/07 16:14:27 by lgrobe-d         ###   ########.fr       */
+/*   Created: 2025/05/07 15:35:58 by lgrobe-d          #+#    #+#             */
+/*   Updated: 2025/05/07 16:17:48 by lgrobe-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(char c)
+#include <stdio.h>
+#include <assert.h>
+#include "libft.h"
+
+void	test_isalpha(void)
 {
-	if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z')
-		return (1);
-	else
-		return (0);
+	assert(ft_isalpha('a') == 1);
+	assert(ft_isalpha('2') == 0);
+	printf("ft_isalpha OK\n");
+}
+
+int	main(void)
+{
+	test_isalpha();
+	return (0);
 }

@@ -6,13 +6,13 @@
 /*   By: lgrobe-d <lgrobe-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 12:46:58 by lgrobe-d          #+#    #+#             */
-/*   Updated: 2025/05/07 14:06:45 by lgrobe-d         ###   ########.fr       */
+/*   Updated: 2025/05/07 16:15:24 by lgrobe-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-int	ft_str_is_alpha(char *str);
+int	ft_isalpha(char c);
 
 #endif
