@@ -2,7 +2,6 @@ FLAG=-Wall -Werror -Wextra
 AR=ar rcs
 CC=cc
 NAME=test
-MAIN=main.c
 ARCHIVE=libft.a
 HDRS=libft.h
 SRCS=ft_isalpha.c
@@ -12,7 +11,7 @@ OBJS= $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -o $@ $^ -L. $(MAIN)
+	$(CC) $(CFLAGS) -o $@ $^ -L. $(NAME).c
 
 $(ARCHIVE): $(OBJS)
 	$(AR) $@ $^
