@@ -1,13 +1,29 @@
-NAME=libft.a
-DEP=libft.h
-FLAGS=-Wall -Werror -Wextra
-SRCS= ft_islpha.c \
+FLAG=-Wall -Werror -Wextra
+AR=ar rcs
+CC=cc
+NAME=libft
+ARCHIVE=libft.a
+HDRS=libft.h
+SRCS=ft_isalpha.c
+OBJS= $(SRCS:.c=.o)
 
-OBJS= $(OBJS:.c=.o)
+$(ARCHIVE): $(OBJS)
+	$(AR) $@ $^
 
-$(NAME): $(OBJS)
-	ar rc $(NAME) $(OBJS)
+%.o : %.c $(HDRS)
+	$(CC) $(CFLAGS) -c $< -o $@
 
-all:
+# all: $(NAME)
 
-.PHONY
+# $(NAME): $(OBJS)s
+# 	$(CC) $(CFLAGS) -o $@ $^
+
+clean:
+	rm -f $(NAME)
+
+fclean: clean
+	rm -f *~ \#*
+
+re: all clean fclean
+
+.PHONY: all clean fclean re
