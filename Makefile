@@ -1,30 +1,33 @@
-FLAG=-Wall -Werror -Wextra
+CFLAGS=-Wall -Werror -Wextra
 AR=ar rcs
 CC=cc
 NAME=test
 ARCHIVE=libft.a
-HDRS=libft.h
-SRCS=ft_isalpha.c
-OBJS= $(SRCS:.c=.o)
+
+HDR=includes/libft.h
+
+SRC=srcs/ft_isalpha.c
+
+OBJ= $(SRC:.c=.o)
 
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -o $@ $^ -L. -lft $(NAME).c
+$(NAME): $(ARCHIVE) $(OBJ)
+	$(CC) $(CFLAGS) -o $@ $(NAME).c -L. -lft
 
-$(ARCHIVE): $(OBJS)
+$(ARCHIVE): $(OBJ)
 	$(AR) $@ $^
 
-$(OBJS) : $(SRCS) $(HDRS)
+$(OBJ) : $(SRC) $(HDR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(NAME)
+	rm -f $(NAME) $(ARCHIVE)
 
 fclean: clean
 	rm -f *~ \#*
-	rm -f *.o
+	rm -f $(OBJ)
 
 re: clean fclean all
 
