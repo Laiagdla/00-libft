@@ -6,7 +6,7 @@
 /*   By: lgrobe-d <lgrobe-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 15:35:58 by lgrobe-d          #+#    #+#             */
-/*   Updated: 2025/05/13 17:31:23 by lgrobe-d         ###   ########.fr       */
+/*   Updated: 2025/05/13 17:54:04 by lgrobe-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,6 +143,19 @@ int	test_memcpy(void)
 	return(0);
 }
 
+int	test_memmove(void)
+{
+	const char	*src = "hello";
+	char 		*dest = malloc(10);
+	char		*ptr;
+	ptr = ft_memmove(dest, src, 5);
+
+	assert(*ptr == 'h');
+	assert(*(ptr + 4) == 'o');
+	return(0);
+}
+
+
 #define GREEN  "\e[32m"
 #define RESET "\e[0m"
 
@@ -161,5 +174,6 @@ int	main(void)
 	printf(GREEN "%d ft_memchr OK\n" RESET, test_memchr());
 	printf(GREEN "%d ft_memcmp OK\n" RESET, test_memcmp());
 	printf(GREEN "%d ft_memcpy OK\n" RESET, test_memcpy());
+	printf(GREEN "%d ft_memmove OK\n" RESET, test_memmove());
 	return (0);
 }
