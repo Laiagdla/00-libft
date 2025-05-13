@@ -6,11 +6,12 @@
 /*   By: lgrobe-d <lgrobe-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 15:35:58 by lgrobe-d          #+#    #+#             */
-/*   Updated: 2025/05/13 16:47:08 by lgrobe-d         ###   ########.fr       */
+/*   Updated: 2025/05/13 17:31:23 by lgrobe-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <assert.h>
 #include "includes/libft.h"
 
@@ -130,6 +131,18 @@ int	test_memcmp(void)
 	return(0);
 }
 
+int	test_memcpy(void)
+{
+	const char	*src = "hello";
+	char 		*dest = malloc(10);
+	char		*ptr;
+	ptr = ft_memcpy(dest, src, 5);
+
+	assert(*ptr == 'h');
+	assert(*(ptr + 4) == 'o');
+	return(0);
+}
+
 #define GREEN  "\e[32m"
 #define RESET "\e[0m"
 
@@ -147,5 +160,6 @@ int	main(void)
 	printf(GREEN "%d ft_memset OK\n" RESET, test_memset());
 	printf(GREEN "%d ft_memchr OK\n" RESET, test_memchr());
 	printf(GREEN "%d ft_memcmp OK\n" RESET, test_memcmp());
+	printf(GREEN "%d ft_memcpy OK\n" RESET, test_memcpy());
 	return (0);
 }

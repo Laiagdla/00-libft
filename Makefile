@@ -19,7 +19,8 @@ SRC=srcs/ft_isalpha.c \
 	srcs/ft_strrchr.c \
 	srcs/ft_memset.c \
 	srcs/ft_memchr.c \
-	srcs/ft_memcmp.c
+	srcs/ft_memcmp.c \
+	srcs/ft_memcpy.c
 
 OBJ= $(SRC:.c=.o)
 
@@ -27,6 +28,7 @@ OBJ= $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(ARCHIVE) $(OBJ)
+	@make cleanlog
 	@$(CC) $(CFLAGS) -o $@ $(NAME).c -L. -lft >> build.log 2>&1
 	@echo "${TEST_PRINT}"
 	@./$(NAME)
@@ -48,6 +50,6 @@ fclean: clean
 re: fclean all
 
 cleanlog:
-	echo "" > build.log
+	@echo "" > build.log
 
 .PHONY: all clean fclean re cleanlog
