@@ -6,7 +6,7 @@
 /*   By: lgrobe-d <lgrobe-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 15:35:58 by lgrobe-d          #+#    #+#             */
-/*   Updated: 2025/05/13 12:34:54 by lgrobe-d         ###   ########.fr       */
+/*   Updated: 2025/05/13 12:45:37 by lgrobe-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,20 @@ void	test_strlen(void)
 	printf("ft_strlen OK\n");
 }
 
+void	test_toupper(void)
+{
+	assert(ft_toupper('a') == 'A');
+	assert(ft_toupper('4') == '4');
+	printf("ft_toupper OK\n");
+}
+
+void	test_tolower(void)
+{
+	assert(ft_tolower('A') == 'a');
+	assert(ft_tolower('4') == '4');
+	printf("ft_tolower OK\n");
+}
+
 int	main(void)
 {
 	test_isalpha();
@@ -71,5 +85,7 @@ int	main(void)
 	test_isascii();
 	test_isprint();
 	test_strlen();
+	test_toupper();
+	test_tolower();
 	return (0);
 }
