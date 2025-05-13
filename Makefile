@@ -11,7 +11,8 @@ SRC=srcs/ft_isalpha.c \
 	srcs/ft_isprint.c \
 	srcs/ft_strlen.c \
 	srcs/ft_toupper.c \
-	srcs/ft_tolower.c
+	srcs/ft_tolower.c \
+	srcs/ft_strchr.c
 
 OBJ= $(SRC:.c=.o)
 
