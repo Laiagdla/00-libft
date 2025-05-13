@@ -4,6 +4,9 @@ CC=cc
 NAME=test
 ARCHIVE=libft.a
 
+TEST_PRINT=\e[1;34m******* TESTING $< ********\e[0m
+TEST_END=\e[1;32m******* ALL OK $< ********\e[0m
+
 SRC=srcs/ft_isalpha.c \
 	srcs/ft_isdigit.c \
 	srcs/ft_isalnum.c \
@@ -14,7 +17,8 @@ SRC=srcs/ft_isalpha.c \
 	srcs/ft_tolower.c \
 	srcs/ft_strchr.c \
 	srcs/ft_strrchr.c \
-	srcs/ft_memset.c
+	srcs/ft_memset.c \
+	srcs/ft_memchr.c
 
 OBJ= $(SRC:.c=.o)
 
@@ -23,9 +27,9 @@ all: $(NAME)
 
 $(NAME): $(ARCHIVE) $(OBJ)
 	@$(CC) $(CFLAGS) -o $@ $(NAME).c -L. -lft
-	@echo "\n///// TESTS /////"
+	@echo "\n${TEST_PRINT}"
 	@./$(NAME)
-	@echo "///// T END /////\n"
+	@echo "${TEST_END} \n"
 	@make fclean
 
 $(ARCHIVE): $(OBJ)
