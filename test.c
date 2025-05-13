@@ -6,7 +6,7 @@
 /*   By: lgrobe-d <lgrobe-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 15:35:58 by lgrobe-d          #+#    #+#             */
-/*   Updated: 2025/05/09 13:24:21 by lgrobe-d         ###   ########.fr       */
+/*   Updated: 2025/05/13 12:29:39 by lgrobe-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,47 @@ void	test_isalpha(void)
 	printf("ft_isalpha OK\n");
 }
 
+void	test_isdigit(void)
+{
+	assert(ft_isdigit('5') == 1);
+	assert(ft_isdigit('a') == 0);
+	printf("ft_isdigit OK\n");
+}
+
+void	test_isalnum(void)
+{
+	assert(ft_isalnum('5') == 1);
+	assert(ft_isalnum('a') == 1);
+	assert(ft_isalnum('~') == 0);
+	printf("ft_isalnum OK\n");
+}
+
+void	test_isascii(void)
+{
+	assert(ft_isascii('5') == 1);
+	assert(ft_isascii('a') == 1);
+	assert(ft_isascii('~') == 1);
+	assert(ft_isascii(128) == 0);
+	printf("ft_isascii OK\n");
+}
+
+void	test_isprint(void)
+{
+	assert(ft_isprint('5') == 1);
+	assert(ft_isprint('a') == 1);
+	assert(ft_isprint('~') == 1);
+	assert(ft_isprint(' ') == 1);
+	assert(ft_isprint(128) == 0);
+	assert(ft_isprint(17) == 0);
+	printf("ft_isprint OK\n");
+}
+
 int	main(void)
 {
 	test_isalpha();
+	test_isalpha();
+	test_isalnum();
+	test_isascii();
+	test_isprint();
 	return (0);
 }
