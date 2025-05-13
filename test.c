@@ -6,7 +6,7 @@
 /*   By: lgrobe-d <lgrobe-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 15:35:58 by lgrobe-d          #+#    #+#             */
-/*   Updated: 2025/05/13 13:28:53 by lgrobe-d         ###   ########.fr       */
+/*   Updated: 2025/05/13 14:05:16 by lgrobe-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,16 @@ void	test_strrchr(void)
 	printf("ft_strrchr OK\n");
 }
 
+void	test_memset(void)
+{
+	char	buffer[10];
+
+	ft_memset(buffer, 'A', sizeof(buffer));
+	assert(buffer[0] == 'A');
+	assert(buffer[7] == 'A');
+	printf("ft_memset OK\n");
+}
+
 int	main(void)
 {
 	test_isalpha();
@@ -109,5 +119,6 @@ int	main(void)
 	test_tolower();
 	test_strchr();
 	test_strrchr();
+	test_memset();
 	return (0);
 }

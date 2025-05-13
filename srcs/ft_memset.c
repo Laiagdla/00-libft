@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgrobe-d <lgrobe-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/13 13:20:45 by lgrobe-d          #+#    #+#             */
-/*   Updated: 2025/05/13 13:53:40 by lgrobe-d         ###   ########.fr       */
+/*   Created: 2025/05/13 13:41:19 by lgrobe-d          #+#    #+#             */
+/*   Updated: 2025/05/13 14:02:16 by lgrobe-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-char	*ft_strrchr(const char *s, int c)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	int	i;
+	size_t	i;
 
-	if (!s)
-		return (NULL);
+	// if (!s)
+	// 	return (NULL);
 	i = 0;
-	while (s[i])
-		i++;
-	while (i >= 0)
+	while (i < n)
 	{
-		if (s[i] == c)
-			return ((char *)&s[i]);
-		i--;
+		((unsigned char *)s)[i] = (unsigned char)c;
+		i++;
 	}
-	return (NULL);
+	return (s);
 }

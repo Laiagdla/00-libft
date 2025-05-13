@@ -6,7 +6,7 @@
 /*   By: lgrobe-d <lgrobe-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 12:46:58 by lgrobe-d          #+#    #+#             */
-/*   Updated: 2025/05/13 13:25:00 by lgrobe-d         ###   ########.fr       */
+/*   Updated: 2025/05/13 14:02:20 by lgrobe-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ int		ft_toupper(int c);
 int		ft_tolower(int c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
+void	*ft_memset(void *s, int c, size_t n);
 
 #endif
