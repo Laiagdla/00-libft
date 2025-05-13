@@ -6,7 +6,7 @@
 /*   By: lgrobe-d <lgrobe-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 15:35:58 by lgrobe-d          #+#    #+#             */
-/*   Updated: 2025/05/13 12:29:39 by lgrobe-d         ###   ########.fr       */
+/*   Updated: 2025/05/13 12:34:54 by lgrobe-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,13 @@ void	test_isprint(void)
 	printf("ft_isprint OK\n");
 }
 
+void	test_strlen(void)
+{
+	assert(ft_strlen("hello") == 5);
+	assert(ft_strlen("") == 0);
+	printf("ft_strlen OK\n");
+}
+
 int	main(void)
 {
 	test_isalpha();
@@ -63,5 +70,6 @@ int	main(void)
 	test_isalnum();
 	test_isascii();
 	test_isprint();
+	test_strlen();
 	return (0);
 }
