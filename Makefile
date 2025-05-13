@@ -5,7 +5,7 @@ NAME=test
 ARCHIVE=libft.a
 
 TEST_PRINT=\e[1;34m******* TESTING $< ********\e[0m
-TEST_END=\e[1;32m******* ALL OK $< ********\e[0m
+TEST_OKEND=\e[1;32m******* ALL OK $< *********\e[0m
 
 SRC=srcs/ft_isalpha.c \
 	srcs/ft_isdigit.c \
@@ -18,7 +18,8 @@ SRC=srcs/ft_isalpha.c \
 	srcs/ft_strchr.c \
 	srcs/ft_strrchr.c \
 	srcs/ft_memset.c \
-	srcs/ft_memchr.c
+	srcs/ft_memchr.c \
+	srcs/ft_memcmp.c
 
 OBJ= $(SRC:.c=.o)
 
@@ -26,24 +27,27 @@ OBJ= $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(ARCHIVE) $(OBJ)
-	@$(CC) $(CFLAGS) -o $@ $(NAME).c -L. -lft
-	@echo "\n${TEST_PRINT}"
+	@$(CC) $(CFLAGS) -o $@ $(NAME).c -L. -lft >> build.log 2>&1
+	@echo "${TEST_PRINT}"
 	@./$(NAME)
-	@echo "${TEST_END} \n"
-	@make fclean
+	@echo "${TEST_OKEND}"
+	@make fclean >> build.log 2>&1
 
 $(ARCHIVE): $(OBJ)
-	$(AR) $@ $^
+	@$(AR) $@ $^ >> build.log 2>&1
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@ >> build.log 2>&1
 
 clean:
-	rm -f $(NAME) $(ARCHIVE)
+	@rm -f $(NAME) $(ARCHIVE) >> build.log 2>&1
 
 fclean: clean
-	rm -f $(OBJ)
+	@rm -f $(OBJ) >> build.log 2>&1
 
 re: fclean all
 
-.PHONY: all clean fclean re
+cleanlog:
+	echo "" > build.log
+
+.PHONY: all clean fclean re cleanlog
