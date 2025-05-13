@@ -6,7 +6,7 @@
 /*   By: lgrobe-d <lgrobe-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 15:35:58 by lgrobe-d          #+#    #+#             */
-/*   Updated: 2025/05/13 16:18:25 by lgrobe-d         ###   ########.fr       */
+/*   Updated: 2025/05/13 16:47:08 by lgrobe-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,6 +119,17 @@ int	test_memchr(void)
 	return(0);
 }
 
+int	test_memcmp(void)
+{
+	const char	*s1 = "hello";
+	const char 	*s2 = "help";
+
+	assert(ft_memcmp(s1, s2, 5) == -4);
+	assert(ft_memcmp(s1, s1, 5) == 0);
+	assert(ft_memcmp(s2, s1, 5) == 4);
+	return(0);
+}
+
 #define GREEN  "\e[32m"
 #define RESET "\e[0m"
 
@@ -135,5 +146,6 @@ int	main(void)
 	printf(GREEN "%d ft_strrchr OK\n" RESET, test_strrchr());
 	printf(GREEN "%d ft_memset OK\n" RESET, test_memset());
 	printf(GREEN "%d ft_memchr OK\n" RESET, test_memchr());
+	printf(GREEN "%d ft_memcmp OK\n" RESET, test_memcmp());
 	return (0);
 }
