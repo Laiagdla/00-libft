@@ -1,10 +1,8 @@
-CFLAGS=-Wall -Werror -Wextra
+CFLAGS=-I./includes -Wall -Werror -Wextra
 AR=ar rcs
 CC=cc
 NAME=test
 ARCHIVE=libft.a
-
-HDR=includes/libft.h
 
 SRC=srcs/ft_isalpha.c
 
@@ -19,16 +17,16 @@ $(NAME): $(ARCHIVE) $(OBJ)
 $(ARCHIVE): $(OBJ)
 	$(AR) $@ $^
 
-$(OBJ) : $(SRC) $(HDR)
+%.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(NAME) $(ARCHIVE)
 
 fclean: clean
-	rm -f *~ \#*
 	rm -f $(OBJ)
 
 re: clean fclean all
 
 .PHONY: all clean fclean re
+
