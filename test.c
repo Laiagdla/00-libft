@@ -6,7 +6,7 @@
 /*   By: lgrobe-d <lgrobe-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 15:35:58 by lgrobe-d          #+#    #+#             */
-/*   Updated: 2025/05/13 13:19:30 by lgrobe-d         ###   ########.fr       */
+/*   Updated: 2025/05/13 13:28:53 by lgrobe-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,17 @@ void	test_strchr(void)
 	assert(ft_strchr(str, 'o') == str + 4);
 	assert(ft_strchr(str, '\0') == str + 5);
 	assert(ft_strchr(str, 'A') == NULL);
-	printf("ft_tolower OK\n");
+	printf("ft_strchr OK\n");
+}
+
+void	test_strrchr(void)
+{
+	const char	*str = "hello";
+
+	assert(ft_strrchr(str, 'l') == str + 3);
+	assert(ft_strrchr(str, '\0') == str + 5);
+	assert(ft_strrchr(str, 'A') == NULL);
+	printf("ft_strrchr OK\n");
 }
 
 int	main(void)
@@ -98,5 +108,6 @@ int	main(void)
 	test_toupper();
 	test_tolower();
 	test_strchr();
+	test_strrchr();
 	return (0);
 }
