@@ -22,7 +22,8 @@ SRC=srcs/ft_isalpha.c \
 	srcs/ft_memcmp.c \
 	srcs/ft_memcpy.c \
 	srcs/ft_memmove.c \
-	srcs/ft_strncmp.c
+	srcs/ft_strncmp.c \
+	srcs/ft_strstr.c
 
 OBJ= $(SRC:.c=.o)
 
