@@ -6,7 +6,7 @@
 /*   By: lgrobe-d <lgrobe-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 12:46:58 by lgrobe-d          #+#    #+#             */
-/*   Updated: 2025/05/14 12:13:41 by lgrobe-d         ###   ########.fr       */
+/*   Updated: 2025/05/14 12:52:03 by lgrobe-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *str, const char *to_find, size_t n);
+char	*ft_strlcpy(char *dest, const char *src, size_t n);
 
 #endif
