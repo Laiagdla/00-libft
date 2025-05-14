@@ -21,7 +21,8 @@ SRC=srcs/ft_isalpha.c \
 	srcs/ft_memchr.c \
 	srcs/ft_memcmp.c \
 	srcs/ft_memcpy.c \
-	srcs/ft_memmove.c
+	srcs/ft_memmove.c \
+	srcs/ft_strncmp.c
 
 OBJ= $(SRC:.c=.o)
 
@@ -30,17 +31,17 @@ all: $(NAME)
 
 $(NAME): $(ARCHIVE) $(OBJ)
 	@make cleanlog
-	@$(CC) $(CFLAGS) -o $@ $(NAME).c -L. -lft >> build.log 2>&1
+	@$(CC) $(CFLAGS) -o $@ $(NAME).c -L. -lft >> build.log
 	@echo "${TEST_PRINT}"
 	@./$(NAME)
 	@echo "${TEST_OKEND}"
-	@make fclean >> build.log 2>&1
+	@make fclean >> build.log
 
 $(ARCHIVE): $(OBJ)
-	@$(AR) $@ $^ >> build.log 2>&1
+	@$(AR) $@ $^ >> build.log
 
 %.o: %.c
-	@$(CC) $(CFLAGS) -c $< -o $@ >> build.log 2>&1
+	@$(CC) $(CFLAGS) -c $< -o $@ >> build.log
 
 clean:
 	@rm -f $(NAME) $(ARCHIVE) >> build.log 2>&1
