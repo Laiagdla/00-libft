@@ -6,11 +6,11 @@
 /*   By: lgrobe-d <lgrobe-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 16:31:46 by lgrobe-d          #+#    #+#             */
-/*   Updated: 2025/05/13 16:40:05 by lgrobe-d         ###   ########.fr       */
+/*   Updated: 2025/05/14 11:21:12 by lgrobe-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stddef.h>
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

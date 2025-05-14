@@ -6,11 +6,11 @@
 /*   By: lgrobe-d <lgrobe-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 13:41:19 by lgrobe-d          #+#    #+#             */
-/*   Updated: 2025/05/13 15:24:16 by lgrobe-d         ###   ########.fr       */
+/*   Updated: 2025/05/14 11:21:32 by lgrobe-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stddef.h>
 
 void	*ft_memset(void *s, int c, size_t n)
 {

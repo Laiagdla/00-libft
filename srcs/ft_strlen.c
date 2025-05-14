@@ -6,11 +6,11 @@
 /*   By: lgrobe-d <lgrobe-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 12:31:13 by lgrobe-d          #+#    #+#             */
-/*   Updated: 2025/05/13 12:38:42 by lgrobe-d         ###   ########.fr       */
+/*   Updated: 2025/05/14 11:21:41 by lgrobe-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stddef.h>
 
 size_t	ft_strlen(const char *str)
 {
