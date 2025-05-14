@@ -6,7 +6,7 @@
 /*   By: lgrobe-d <lgrobe-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 15:35:58 by lgrobe-d          #+#    #+#             */
-/*   Updated: 2025/05/14 12:11:19 by lgrobe-d         ###   ########.fr       */
+/*   Updated: 2025/05/14 12:19:36 by lgrobe-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -166,13 +166,15 @@ int	test_strncmp(void)
 	return(0);
 }
 
-int	test_strstr(void)
+int	test_strnstr(void)
 {
 	const char	*haystack = "one more line of code";
 	const char	*needle = "lin";
 	char		*ptr;
 
-	ptr = ft_strstr(haystack, needle);
+	ptr = ft_strnstr(haystack, needle, 2);
+	assert(ptr == NULL);
+	ptr = ft_strnstr(haystack, needle, 20);
 	assert(ptr == haystack + 9);
 	return (0);
 }
@@ -197,6 +199,6 @@ int	main(void)
 	printf(GREEN "%d ft_memcpy OK\n" RESET, test_memcpy());
 	printf(GREEN "%d ft_memmove OK\n" RESET, test_memmove());
 	printf(GREEN "%d ft_strncmp OK\n" RESET, test_strncmp());
-	printf(GREEN "%d ft_strnstr OK\n" RESET, test_strstr());
+	printf(GREEN "%d ft_strnstr OK\n" RESET, test_strnstr());
 	return (0);
 }

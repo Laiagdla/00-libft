@@ -1,42 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lgrobe-d <lgrobe-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 11:56:18 by lgrobe-d          #+#    #+#             */
-/*   Updated: 2025/05/14 12:08:08 by lgrobe-d         ###   ########.fr       */
+/*   Updated: 2025/05/14 12:18:49 by lgrobe-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-char	*ft_strstr(const char *str, const char *to_find)
+char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 {
-	char	*ptr;
-	int		pos2;
+	char		*ptr;
+	size_t		i;
+	size_t		len;
 
 	ptr = (char *)str;
+	len = 0;
 	if (to_find[0] == '\0')
 		return ((char *)str);
-	while (*ptr != '\0')
+	while (*ptr != '\0' && len < n)
 	{
 		if (*ptr == to_find[0])
 		{
-			pos2 = 0;
-			while (to_find[pos2] != '\0' && ptr[pos2] != '\0')
+			i = 0;
+			while (to_find[i] != '\0' && ptr[i] != '\0')
 			{
-				if (to_find[pos2] != ptr[pos2])
+				if (to_find[i] != ptr[i])
 					break ;
-				pos2++;
+				i++;
 			}
-			if (to_find[pos2] == '\0')
+			if (to_find[i] == '\0')
 			{
 				return (ptr);
 			}
 		}
 		ptr++;
+		len++;
 	}
 	return (NULL);
 }
