@@ -6,7 +6,7 @@
 /*   By: lgrobe-d <lgrobe-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 13:20:45 by lgrobe-d          #+#    #+#             */
-/*   Updated: 2025/05/14 11:21:45 by lgrobe-d         ###   ########.fr       */
+/*   Updated: 2025/05/14 16:44:18 by lgrobe-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
 
-	if (!s)
-		return (NULL);
 	i = 0;
 	while (s[i])
 		i++;
@@ -27,5 +25,7 @@ char	*ft_strrchr(const char *s, int c)
 			return ((char *)&s[i]);
 		i--;
 	}
+	if (!c && (*s == 0))
+		return ((char *)&s[i]);
 	return (NULL);
 }
