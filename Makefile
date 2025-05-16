@@ -1,11 +1,11 @@
-CFLAGS=-I./includes -Wall -Werror -Wextra
+CFLAGS=-I./includes -g -Wall -Werror -Wextra
 AR=ar rcs
 CC=cc
 NAME=libft
 ARCHIVE=libft.a
 
 TEST_PRINT=\e[1;34m******* TESTING $< ********\e[0m
-TEST_OKEND=\e[1;32m******* ALL OK $< *********\e[0m
+TEST_OKEND=\e[1;34m******* ALL OK $< *********\e[0m
 
 SRC=srcs/ft_isalpha.c \
 	srcs/ft_isdigit.c \

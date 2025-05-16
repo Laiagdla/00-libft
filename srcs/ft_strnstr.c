@@ -6,7 +6,7 @@
 /*   By: lgrobe-d <lgrobe-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 11:56:18 by lgrobe-d          #+#    #+#             */
-/*   Updated: 2025/05/14 12:18:49 by lgrobe-d         ###   ########.fr       */
+/*   Updated: 2025/05/16 11:50:24 by lgrobe-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,27 @@
 
 char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 {
-	char		*ptr;
 	size_t		i;
 	size_t		len;
 
-	ptr = (char *)str;
 	len = 0;
-	if (to_find[0] == '\0')
+	if (to_find[0] == '\0' || n == 0)
 		return ((char *)str);
-	while (*ptr != '\0' && len < n)
+	while (str[len] != '\0' && len < n)
 	{
-		if (*ptr == to_find[0])
+		i = 0;
+		if (str[len] == to_find[i])
 		{
-			i = 0;
-			while (to_find[i] != '\0' && ptr[i] != '\0')
+			while ((to_find[i] != '\0' && str[len + i] != '\0')
+				&& (len + i < n))
 			{
-				if (to_find[i] != ptr[i])
+				if (to_find[i] != str[len + i])
 					break ;
 				i++;
 			}
 			if (to_find[i] == '\0')
-			{
-				return (ptr);
-			}
+				return ((char *)&str[len]);
 		}
-		ptr++;
 		len++;
 	}
 	return (NULL);
