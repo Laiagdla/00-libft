@@ -25,7 +25,8 @@ SRC=srcs/ft_isalpha.c \
 	srcs/ft_strncmp.c \
 	srcs/ft_strnstr.c \
 	srcs/ft_strlcpy.c \
-	srcs/ft_strlcat.c
+	srcs/ft_strlcat.c \
+	srcs/ft_bzero.c
 
 OBJ= $(SRC:.c=.o)
 
