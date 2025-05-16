@@ -6,7 +6,7 @@
 /*   By: lgrobe-d <lgrobe-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 12:46:58 by lgrobe-d          #+#    #+#             */
-/*   Updated: 2025/05/16 12:06:43 by lgrobe-d         ###   ########.fr       */
+/*   Updated: 2025/05/16 12:21:10 by lgrobe-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,7 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t n);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 void	ft_bzero(void *s, size_t n);
+int		ft_atoi(const char *nptr);
+char	*strdup(const char *s);
 
 #endif
