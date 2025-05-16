@@ -29,7 +29,8 @@ SRC=srcs/ft_isalpha.c \
 	srcs/ft_bzero.c \
 	srcs/ft_atoi.c \
 	srcs/ft_strdup.c \
-	srcs/ft_calloc.c
+	srcs/ft_calloc.c \
+	srcs/ft_substr.c
 
 OBJ= $(SRC:.c=.o)
 

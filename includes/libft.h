@@ -6,13 +6,14 @@
 /*   By: lgrobe-d <lgrobe-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 12:46:58 by lgrobe-d          #+#    #+#             */
-/*   Updated: 2025/05/16 12:50:53 by lgrobe-d         ###   ########.fr       */
+/*   Updated: 2025/05/16 13:02:54 by lgrobe-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+/* PART 1 */
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -36,6 +37,8 @@ void	ft_bzero(void *s, size_t n);
 int		ft_atoi(const char *nptr);
 char	*ft_strdup(const char *s);
 void	*ft_calloc(size_t nmemb, size_t size);
+/* PART 2 */
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 
 #endif
