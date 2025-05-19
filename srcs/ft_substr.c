@@ -6,7 +6,7 @@
 /*   By: lgrobe-d <lgrobe-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 13:02:16 by lgrobe-d          #+#    #+#             */
-/*   Updated: 2025/05/16 13:25:36 by lgrobe-d         ###   ########.fr       */
+/*   Updated: 2025/05/19 10:31:27 by lgrobe-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*ptr;
 
+	if (!s)
+		return (NULL);
 	ptr = (char *)malloc(sizeof(char) * len +1);
 	if (!ptr)
 		return (NULL);
