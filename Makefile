@@ -33,7 +33,8 @@ SRC=srcs/ft_isalpha.c \
 	srcs/ft_substr.c \
 	srcs/ft_strjoin.c \
 	srcs/ft_strtrim.c \
-	srcs/ft_split.c
+	srcs/ft_split.c \
+	srcs/ft_itoa.c
 
 OBJ= $(SRC:.c=.o)
 
@@ -43,9 +44,9 @@ all: $(NAME)
 $(NAME): $(ARCHIVE) $(OBJ)
 	@make cleanlog
 	@$(CC) $(CFLAGS) -o $@ $(NAME).c -L. -lft -lbsd >> build.log
-	# @echo "${TEST_PRINT}"
-	# @./$(NAME)
-	# @echo "${TEST_OKEND}"
+	@echo "${TEST_PRINT}"
+	@./$(NAME)
+	@echo "${TEST_OKEND}"
 	# @make fclean >> build.log
 
 $(ARCHIVE): $(OBJ)
