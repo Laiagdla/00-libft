@@ -35,7 +35,12 @@ SRC=srcs/ft_isalpha.c \
 	srcs/ft_strtrim.c \
 	srcs/ft_split.c \
 	srcs/ft_itoa.c \
-	srcs/ft_strmapi.c
+	srcs/ft_strmapi.c \
+	srcs/ft_striteri.c \
+	srcs/ft_putchar_fd.c \
+	srcs/ft_putstr_fd.c \
+	srcs/ft_putendl_fd.c \
+	srcs/ft_putnbr_fd.c
 
 OBJ= $(SRC:.c=.o)
 
