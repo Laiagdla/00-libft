@@ -34,7 +34,8 @@ SRC=srcs/ft_isalpha.c \
 	srcs/ft_strjoin.c \
 	srcs/ft_strtrim.c \
 	srcs/ft_split.c \
-	srcs/ft_itoa.c
+	srcs/ft_itoa.c \
+	srcs/ft_strmapi.c
 
 OBJ= $(SRC:.c=.o)
 

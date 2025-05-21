@@ -6,7 +6,7 @@
 /*   By: lgrobe-d <lgrobe-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 16:14:14 by lgrobe-d          #+#    #+#             */
-/*   Updated: 2025/05/19 17:38:44 by lgrobe-d         ###   ########.fr       */
+/*   Updated: 2025/05/21 10:07:37 by lgrobe-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,21 @@ static int	nlen(int n, int *sign)
 	return (len);
 }
 
+static void	itoa_specials(char *str, int *n, int *len, int sign)
+{
+	if (*n == 0)
+		str[0] = '0';
+	if (sign)
+		str[0] = '-';
+	if (*n == -2147483648)
+	{
+		str[--*len + sign] = '8';
+		*n /= 10;
+	}
+	if (*n < 0)
+		*n *= -1;
+}
+
 char	*ft_itoa(int n)
 {
 	char	*str;
@@ -47,18 +62,8 @@ char	*ft_itoa(int n)
 	str = (char *)malloc(sizeof(char) * (len + sign +1));
 	if (!str)
 		return (NULL);
-	if (n == 0)
-		str[0] = '0';
 	str[len + sign] = '\0';
-	if (n == -2147483648)
-	{
-		str[--len + sign] = '8';
-		n /= 10;
-	}
-	if (sign)
-		str[0] = '-';
-	if (n < 0)
-		n *= -1;
+	itoa_specials(str, &n, &len, sign);
 	while (n != 0)
 	{
 		str[--len + sign] = (n % 10) + '0';
