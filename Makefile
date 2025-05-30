@@ -11,10 +11,11 @@ SRC 	=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 			ft_atoi.c ft_strdup.c ft_calloc.c ft_substr.c ft_strjoin.c \
 			ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
 			ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
-BONUS	=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c
+BONUS	=	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+			ft_lstadd_back.c ft_lstdelone.c
 
-OBJ		=	$(addprefix build/,$(SRC:.c=.o))
-OBJBONUS=	$(addprefix build/,$(SRC:.c=.o)) $(addprefix build/,$(BONUS:.c=.o))
+OBJ		=	$(SRC:.c=.o)
+OBJBONUS=	$(SRC:.c=.o) $(BONUS:.c=.o)
 
 all: $(NAME)
 
@@ -24,35 +25,40 @@ $(NAME): $(OBJ)
 bonus: $(OBJBONUS)
 	$(AR) libft.a $^
 
-build:
-	mkdir -p build
-
-build/%.o:	%.c build
+%.o:	%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(RM) build
+	$(RM) $(OBJ) $(OBJBONUS)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
 
-cleanlog:
-	echo "" > build.log
+# cleanlog:
+# 	echo "" > build.log
 
 # so:
 # 	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
 # 	gcc -nostartfiles -shared -o libft.so $(OBJ)
 
-TEST_PRINT=\\e[1;34m******* TESTING $< ********\\e[0m
-TEST_OKEND=\\e[1;34m******* ALL OK $< *********\\e[0m
+# TEST_PRINT=\\e[1;34m******* TESTING $< ********\\e[0m
+# TEST_OKEND=\\e[1;34m******* ALL OK $< *********\\e[0m
 
-test: bonus $(OBJBONUS)
-	@$(CC) $(CFLAGS) libft.c -o libft -L. -lft -lbsd -I.
-	@echo "${TEST_PRINT}"
-	@./libft
-	@echo "${TEST_OKEND}"
+# OBJ		=	$(addprefix build/,$(SRC:.c=.o))
+# OBJBONUS=	$(addprefix build/,$(SRC:.c=.o)) $(addprefix build/,$(BONUS:.c=.o))
+# build:
+# 	mkdir -p build
+
+# build/%.o:	%.c build
+# 	$(CC) $(CFLAGS) -c $< -o $@
+
+# test: bonus $(OBJBONUS)
+# 	@$(CC) $(CFLAGS) libft.c -o libft -L. -lft -lbsd -I.
+# 	@echo "${TEST_PRINT}"
+# 	@./libft
+# 	@echo "${TEST_OKEND}"
 
 # downloadtest:
 # 	@if [ ! -L libft.c ]; then \
